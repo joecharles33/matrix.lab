@@ -1,0 +1,38 @@
+apiVersion: v1
+baseDomain: linuxrevolution.com
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform: {}
+  replicas: 3
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform: {}
+  replicas: 3
+metadata:
+  creationTimestamp: null
+  name: ocp4-mwn
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 10.0.0.0/16
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  vsphere:
+    apiVIP: 10.10.10.161
+    cluster: OCP4
+    datacenter: HomeLab
+    defaultDatastore: datastore-shared-iscsi
+    ingressVIP: 10.10.10.162
+    network: DPortGroup-Guests
+    password: NotAPassword 
+    username: administrator@vsphere.matrix.lab
+    vCenter: vmw-vcenter6.matrix.lab
+publish: External
