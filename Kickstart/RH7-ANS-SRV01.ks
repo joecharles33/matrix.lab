@@ -9,6 +9,8 @@ keyboard --vckeymap=us --xlayouts='us'
 # System language
 lang en_US.UTF-8
 
+url --url="http://10.10.10.10/OS/rhel-server-7.7-x86_64/"
+
 # Network information
 network --bootproto=static --device=eth0 --gateway=10.10.10.1 --ip=10.10.10.107 --netmask=255.255.255.0 --activate --nameserver=10.10.10.122,10.10.10.121,8.8.8.8 --hostname=rh7-ans-srv01.matrix.lab 
 
@@ -22,15 +24,15 @@ timezone America/Chicago --isUtc --ntpservers=zion.matrix.lab,apoc.matrix.lab,sa
 #########################################################################
 ### DISK ###
 # System bootloader configuration
-bootloader --location=mbr --boot-drive=vda
-ignoredisk --only-use=vda,vdb
+bootloader --location=mbr --boot-drive=sda
+ignoredisk --only-use=sda,sdb
 
 # Partition clearing information
-clearpart --all --initlabel --drives=vda,vdb
+clearpart --all --initlabel --drives=sda,sdb
 
 # Partition Info
-part /boot --fstype="xfs" --ondisk=vda --size=500
-part pv.03 --fstype="lvmpv" --ondisk=vda --size=10240 --grow
+part /boot --fstype="xfs" --ondisk=sda --size=500
+part pv.03 --fstype="lvmpv" --ondisk=sda --size=10240 --grow
 #
 volgroup vg_rhel pv.03
 #
@@ -42,7 +44,7 @@ logvol /var           --fstype="xfs" --vgname=vg_rhel  --name=var      --label="
 logvol /var/log       --fstype="xfs" --vgname=vg_rhel  --name=varlog   --label="log"   --size=8192  
 logvol /var/log/audit --fstype="xfs" --vgname=vg_rhel  --name=varaudit --label="audit" --size=2048  
 
-part pv.04 --fstype="lvmpv" --ondisk=vdb --size=10240 --grow
+part pv.04 --fstype="lvmpv" --ondisk=sdb --size=10240 --grow
 volgroup vg_ansible pv.04
 logvol /var/opt/rh/rh-postgresql10 --fstype="xfs" --vgname=vg_ansible --name=postgres --label="postgres"   --size=10240 
 
