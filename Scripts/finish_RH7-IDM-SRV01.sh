@@ -145,6 +145,10 @@ ipa dnsrecord-add matrix.lab storage            --cname-rec='seraph.matrix.lab.'
 ipa dnsrecord-add matrix.lab nas                --cname-rec='seraph.matrix.lab.'
 ipa dnsrecord-add matrix.lab freenas            --cname-rec='seraph.matrix.lab.'
 
+ipa dnsrecord-add matrix.lab dock-dell-1        --a-rec 10.10.10.60
+ipa dnsrecord-add matrix.lab dock-thinkpad      --a-rec 10.10.10.61
+ipa dnsrecord-add matrix.lab dock-dell-2        --a-rec 10.10.10.62
+
 # REVERSE LOOKUP 
 # 10.10.10
 ipa dnsrecord-add 10.10.10.in-addr.arpa 1       --ptr-rec sophos-xg.matrix.lab.
@@ -167,6 +171,10 @@ ipa dnsrecord-add 10.10.10.in-addr.arpa 32      --ptr-rec trinity-guest.matrix.l
 ipa dnsrecord-add 10.10.10.in-addr.arpa 33      --ptr-rec morpheus-guest.matrix.lab.
 ipa dnsrecord-add 10.10.10.in-addr.arpa 34      --ptr-rec dozer-guest.matrix.lab.
 ipa dnsrecord-add 10.10.10.in-addr.arpa 35      --ptr-rec tank-guest.matrix.lab.
+ipa dnsrecord-add 10.10.10.in-addr.arpa 60      --ptr-rec dock-dell-1.matrix.lab.
+ipa dnsrecord-add 10.10.10.in-addr.arpa 61      --ptr-rec dock-thinkpad.matrix.lab.
+ipa dnsrecord-add 10.10.10.in-addr.arpa 62      --ptr-rec dock-dell-2.matrix.lab.
+
 # 10.16.172
 ipa dnsrecord-add 10.16.172.in-addr.arpa 10     --ptr-rec zion-storage.matrix.lab.
 ipa dnsrecord-add 10.16.172.in-addr.arpa 11     --ptr-rec neo-storage.matrix.lab.
@@ -193,6 +201,7 @@ ipa dnsrecord-add matrix.lab librenms           --cname-rec='rh7-lms-srv01'
 ipa dnsrecord-add matrix.lab rh7-jenkins-srv01  --a-rec 10.10.10.111
 ipa dnsrecord-add matrix.lab jenkins            --cname-rec='rh7-jenkins-srv01'
 ipa dnsrecord-add matrix.lab vmw-vcenter6       --a-rec 10.10.10.130
+ipa dnsrecord-add matrix.lab win-2019-srv01      --a-rec 10.10.10.131
 ipa dnsrecord-add 10.10.10.in-addr.arpa 20      --ptr-rec websrv.matrix.lab.
 ipa dnsrecord-add 10.10.10.in-addr.arpa 100     --ptr-rec rh8-util-srv01.matrix.lab.
 ipa dnsrecord-add 10.10.10.in-addr.arpa 102     --ptr-rec rh7-sat6-srv01.matrix.lab.
@@ -204,6 +213,7 @@ ipa dnsrecord-add 10.10.10.in-addr.arpa 107     --ptr-rec rh7-ans-srv01.matrix.l
 ipa dnsrecord-add 10.10.10.in-addr.arpa 110     --ptr-rec rh7-lms-srv01.matrix.lab.
 ipa dnsrecord-add 10.10.10.in-addr.arpa 111     --ptr-rec rh7-jenkins-srv01.matrix.lab.
 ipa dnsrecord-add 10.10.10.in-addr.arpa 130     --ptr-rec vmw-vcenter6.matrix.lab.
+ipa dnsrecord-add 10.10.10.in-addr.arpa 131     --ptr-rec win-2019-srv01.matrix.lab.
 ###############
 # VPN Endpoints 
 ###############

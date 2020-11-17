@@ -144,6 +144,7 @@ WEBSERVER=10.10.10.10
 curl http://${WEBSERVER}/Files/etc_snmp_snmpd.conf > /etc/snmp/snmpd.conf
 restorecon -Fvv /etc/snmp/snmpd.conf
 systemctl enable snmpd --now 
+
 firewall-cmd --permanent --add-service=snmp
 firewall-cmd --reload
 
