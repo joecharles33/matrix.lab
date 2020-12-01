@@ -2,8 +2,9 @@
 ![LinuxRevolution](images/LinuxRevolution_RedGradient.png)  
 
 ## Status
-Untested.  I am currently making a TON of changes to make my lab Hyperconverged.  
-Environment is currently being used to test OCP4.
+Untested.  I am currently making a TON of changes to make my lab "Hybrid".  
+Environment is currently being used to test OCP4, RHACM on AWS/on-prem and AWS GovCloud.  
+There is a lot to unpack here.
 
 ## Overview
 My Homelab dedicated to deploying portions of the Red Hat product portfolio and AWS integration.
@@ -18,10 +19,13 @@ First of all: how *dare* you!  Second: Great question.  Many of my customers who
 Lastly, this is NOT a "how-to", an implementation guide, best-practices lab, etc... I do a number of things with this lab I would never do (or recommend/allow anyone else to do) in a business or production environment.
 
 ### DNS and Domains
-| Domain              | Purpose                                                | Provider/Service
-|:--------------------|:-------------------------------------------------------|:----------------:|
-| matrix.lab          | Internal Only domain I use for my lab                  | Red Hat IdM
-| linuxrevolution.com | External (and now Internal) domain I use for.. testing | AWS Route 53
+| Domain                  | Purpose                                                | Provider/Service
+|:------------------------|:-------------------------------------------------------|:----------------:|
+| matrix.lab              | Internal Only domain I use for my lab                  | Red Hat IdM      |
+| linuxrevolution.com     | External (and now Internal) domain I use for.. testing | AWS Route 53     |
+| clouditoutloud.com      | External (only) domain for AWS resources               | AWS Route 53     |
+| gov.clouditoutloud.com  | External (only) domain for AWS resources in GovCloud   | AWS Route 53     |
+
 
 ## Products
 * Red Hat IdM
